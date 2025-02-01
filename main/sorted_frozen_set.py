@@ -3,7 +3,7 @@ from collections.abc import Iterable, Hashable
 
 class SortedFrozenSet:
     def __init__(self, items: Iterable[Hashable] | None = None):
-        self._items: list[Hashable] = list(items) if items is not None else list()
+        self._items: set[Hashable] = set(items) if items is not None else set()
 
     def __contains__(self, item: Hashable) -> bool:
         return item in self._items
